@@ -29,8 +29,8 @@ const scrape = async () => {
           await t.evaluate((x) => {
             const city = x.querySelector("th").innerText;
             const country = x.querySelectorAll("td")[0].innerText;
-            const population = x.querySelectorAll("td")[6].innerText;
-            const area = x.querySelectorAll("td")[7].innerText;
+            const population = x.querySelectorAll("td")[7].innerText;
+            const area = x.querySelectorAll("td")[8].innerText;
             return {
               city: city,
               country: country,
@@ -42,7 +42,7 @@ const scrape = async () => {
     );
 
     const jsonData = JSON.stringify(result2, null, 2);
-    fs.writeFileSync("largestCities.json", jsonData);
+    fs.writeFileSync("googleShoppingSearchResults.json", jsonData);
     // await browser.close();
     console.log(result2);
   } catch (err) {
